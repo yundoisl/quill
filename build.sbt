@@ -28,7 +28,7 @@ lazy val superPure = new org.scalajs.sbtplugin.cross.CrossType {
     Some(projectBase.getParentFile / "src" / conf / "scala")
 }
 
-lazy val `quill-core` = 
+lazy val `quill-core` =
   crossProject.crossType(superPure)
     .settings(commonSettings: _*)
     .settings(mimaSettings: _*)
@@ -44,7 +44,7 @@ lazy val `quill-core` =
 lazy val `quill-core-jvm` = `quill-core`.jvm
 lazy val `quill-core-js` = `quill-core`.js
 
-lazy val `quill-sql` = 
+lazy val `quill-sql` =
   crossProject.crossType(superPure)
     .settings(commonSettings: _*)
     .settings(mimaSettings: _*)
@@ -115,7 +115,7 @@ lazy val `quill-async-postgres` =
     .settings(
       fork in Test := true,
       libraryDependencies ++= Seq(
-        "com.github.mauricio" %% "postgresql-async" % "0.2.20"
+        "com.github.mauricio" %% "postgresql-async" % "0.2.19"
       )
     )
     .dependsOn(`quill-async` % "compile->compile;test->test")
